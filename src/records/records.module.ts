@@ -6,6 +6,7 @@ import { RecordEvent } from './entities/record-event.entity';
 import { RecordSnapshot } from './entities/record-snapshot.entity';
 import { RecordsController } from './controllers/records.controller';
 import { RecordsService } from './services/records.service';
+import { RelatedRecordsService } from './services/related-records.service';
 import { IpfsService } from './services/ipfs.service';
 import { StellarService } from './services/stellar.service';
 import { IpfsWithBreakerService } from './services/ipfs-with-breaker.service';
@@ -25,7 +26,7 @@ import { MedicalRbacModule } from '../roles/medical-rbac.module';
     MedicalRbacModule,
   ],
   controllers: [RecordsController],
-  providers: [RecordsService, IpfsService, StellarService, IpfsWithBreakerService, RecordEventStoreService],
-  exports: [RecordsService, IpfsWithBreakerService, RecordEventStoreService],
+  providers: [RecordsService, RelatedRecordsService, IpfsService, StellarService, IpfsWithBreakerService, RecordEventStoreService],
+  exports: [RecordsService, RelatedRecordsService, IpfsWithBreakerService, RecordEventStoreService],
 })
 export class RecordsModule {}
